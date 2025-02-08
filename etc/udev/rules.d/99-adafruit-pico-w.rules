@@ -1,0 +1,2 @@
+#
+SUBSYSTEM=="usb", ATTR{idVendor}=="239a", ATTR{idProduct}=="8120", ACTION=="add", RUN+="/usr/bin/python3 /etc/pico/wakeup_enable.py"
