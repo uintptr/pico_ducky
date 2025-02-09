@@ -1,3 +1,25 @@
 {
-   "keys": "Hello, World!"
+   "commands": [
+      {
+         "keycodes": "LEFT_CONTROL"
+      },
+      {
+         "sleep": 1
+      },
+      {
+         "write": "Hello, "
+      },
+      {
+         "sleep": 1
+      },
+      {
+         "write": "World"
+      },
+      {
+         "keycodes": "SHIFT,ONE"
+      },
+      {
+         "keycodes": "RETURN"
+      }
+   ]
 }
