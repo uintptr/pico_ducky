@@ -40,6 +40,31 @@ class KeyStroke:
         self.kbd.send(Keycode.ESCAPE)
         return Response(request, status=OK_200)
 
+    def api_hello(self, request: Request) -> Response:
+        # Hello,
+        self.kbd.press(Keycode.SHIFT)
+        self.kbd.send(Keycode.H)
+        self.kbd.release(Keycode.SHIFT)
+        self.kbd.send(Keycode.E)
+        self.kbd.send(Keycode.L)
+        self.kbd.send(Keycode.L)
+        self.kbd.send(Keycode.O)
+        self.kbd.send(Keycode.COMMA)
+        # World
+        self.kbd.press(Keycode.SHIFT)
+        self.kbd.send(Keycode.W)
+        self.kbd.release(Keycode.SHIFT)
+        self.kbd.send(Keycode.O)
+        self.kbd.send(Keycode.R)
+        self.kbd.send(Keycode.L)
+        self.kbd.send(Keycode.D)
+        self.kbd.press(Keycode.SHIFT)
+        self.kbd.send(Keycode.ONE)
+        self.kbd.release(Keycode.SHIFT)
+        self.kbd.send(Keycode.ENTER)
+
+        return Response(request, status=OK_200)
+
 
 def main() -> int:
 
@@ -59,7 +84,8 @@ def main() -> int:
         ks = KeyStroke()
 
         routes = [
-            Route("/api/wakeup", "GET", ks.api_wakeup)
+            Route("/api/wakeup", "GET", ks.api_wakeup),
+            Route("/api/hello", "GET", ks.api_hello)
         ]
 
         server.add_routes(routes)
