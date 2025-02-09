@@ -1,7 +1,7 @@
 # Pico Ducky
 
 A "rubber ducky" that runs on a Raspberry Pico W board (RP2040). Mainly using it
-to wake up a laptop that doesn't support Wake-On-Lan (WOL)
+to wake up a laptop that doesn't support Wake-On-Lan (WOL) via HomeAssistant
 
 ## Wakeup the laptop
 
