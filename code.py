@@ -15,7 +15,6 @@ from adafruit_hid.keycode import Keycode
 from adafruit_hid.keyboard_layout_us import KeyboardLayoutUS
 from adafruit_httpserver import Server, Request, Response, Route
 
-
 from adafruit_httpserver.status import *
 
 LISTENING_PORT = 8080
@@ -25,6 +24,9 @@ def wifi_connect():
 
     ssid = os.getenv("WIFI_SSID")
     password = os.getenv("WIFI_PASSWORD")
+
+    assert ssid is not None, "WIFI_SSID is missing from settings.toml"
+    assert password is not None, "WIFI_PASSWORD is missing from settings.toml"
 
     print(f"Connecting to {ssid}...")
     wifi.radio.connect(ssid, password)  # type: ignore
@@ -76,7 +78,7 @@ class KeyStroke:
 
     def api_wakeup(self, request: Request) -> Response:
         print("sending ESC")
-        self.kbd.send(Keycode.ESCAPE)
+        self.kbd.send(Keycode.LEFT_CONTROL)
         return Response(request, status=OK_200)
 
     def api_type(self, request: Request) -> Response:
