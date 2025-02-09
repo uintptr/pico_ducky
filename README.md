@@ -18,7 +18,7 @@ curl -v -X POST -H "Content-Type: application/json" -d "@test/req.json" http://1
 
 # Installation
 
-## CircuitPython
+## 1. CircuitPython
 
 https://circuitpython.org/
 
@@ -62,6 +62,5 @@ The root directory should look like this:
 │       └── status.mpy
 ├── sd
 │   └── placeholder.txt
-├── settings.toml
-└── wifi.json
+└── settings.toml
 ```
