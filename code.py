@@ -78,7 +78,7 @@ class KeyStroke:
 
     def api_wakeup(self, request: Request) -> Response:
         print("sending ESC")
-        self.kbd.send(Keycode.LEFT_CONTROL)
+        self.kbd.send(Keycode.ESCAPE)
         return Response(request, status=OK_200)
 
     def api_type(self, request: Request) -> Response:
